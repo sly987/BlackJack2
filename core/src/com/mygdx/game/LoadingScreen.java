@@ -6,6 +6,7 @@ public class LoadingScreen implements Screen {
     private BlackJack parent;
 
     LoadingScreen(BlackJack blackJack){
+
         parent = blackJack;
     }
 
