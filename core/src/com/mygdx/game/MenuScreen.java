@@ -2,8 +2,11 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -26,18 +29,24 @@ public class MenuScreen implements Screen {
     @Override
     public void show() {
         Table table = new Table();
+
         table.setFillParent(true);
         table.setDebug(true);
         stage.addActor(table);
-        Skin skin = new Skin(Gdx.files.internal("gdx-skins-master/neon/skin/neon-ui.json"));
+        Skin skin = new Skin(Gdx.files.internal("gdx-skins-master/neonTest/skin/neon-ui.json"));
         TextButton newGame = new TextButton("New Game", skin);
         TextButton preferences = new TextButton("Preferences", skin);
         TextButton exit = new TextButton("Exit", skin);
+
+
+
         table.add(newGame).fillX().uniformX();
-        table.row().pad(10, 0, 10, 0);
+        newGame.center();
+        table.row();
         table.add(preferences).fillX().uniformX();
         table.row();
         table.add(exit).fillX().uniformX();
+
     }
 
     @Override
