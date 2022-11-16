@@ -38,13 +38,19 @@ public class MenuScreen implements Screen {
         TextButton preferences = new TextButton("Preferences", skin);
         TextButton exit = new TextButton("Exit", skin);
 
+        //pour avoir une hauteur de bouton plus grande
+        float rowHeight = newGame.getHeight()*1.5f;
 
 
         table.add(newGame).fillX().uniformX();
-        newGame.center();
-        table.row();
+
+
+
+
+        table.getCell(newGame).prefHeight(rowHeight);
+        table.row().prefHeight(rowHeight);
         table.add(preferences).fillX().uniformX();
-        table.row();
+        table.row().prefHeight(rowHeight);
         table.add(exit).fillX().uniformX();
 
     }
