@@ -1,6 +1,7 @@
-package com.mygdx.game;
+package com.mygdx.game.view;
 
 import com.badlogic.gdx.Screen;
+import com.mygdx.game.BlackJack;
 
 public class SoloScreen implements Screen {
 

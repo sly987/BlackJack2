@@ -1,10 +1,10 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.Game;
+import com.mygdx.game.view.LoadingScreen;
+import com.mygdx.game.view.MenuScreen;
+import com.mygdx.game.view.PreferenceScreen;
+import com.mygdx.game.view.SoloScreen;
 
 public class BlackJack extends Game {
 
@@ -13,9 +13,11 @@ public class BlackJack extends Game {
 	private LoadingScreen loadingScreen;
 	private MenuScreen menuScreen;
 	private SoloScreen soloScreen;
+	private PreferenceScreen preferenceScreen;
 
 	public final static int MENU = 0;
 	public final static int SOLO = 1;
+	public final static int PREFERENCE = 2;
 
 	@Override
 	public void create() {
@@ -39,6 +41,11 @@ public class BlackJack extends Game {
 				}
 				this.setScreen(soloScreen);
 				break;
+
+			case PREFERENCE:
+				if(preferenceScreen == null){
+					preferenceScreen = new PreferenceScreen(this);
+				}
 		}
 	}
 
