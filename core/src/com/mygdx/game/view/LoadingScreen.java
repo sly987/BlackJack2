@@ -6,7 +6,7 @@ import com.mygdx.game.BlackJack;
 public class LoadingScreen implements Screen {
     private BlackJack parent;
 
-    LoadingScreen(BlackJack blackJack){
+    public LoadingScreen(BlackJack blackJack){
 
         parent = blackJack;
     }

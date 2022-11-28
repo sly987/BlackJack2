@@ -14,6 +14,7 @@ public class BlackJack extends Game {
 	private MenuScreen menuScreen;
 	private SoloScreen soloScreen;
 	private PreferenceScreen preferenceScreen;
+	private AppPreferences preferences;
 
 	public final static int MENU = 0;
 	public final static int SOLO = 1;
@@ -22,6 +23,7 @@ public class BlackJack extends Game {
 	@Override
 	public void create() {
 		loadingScreen = new LoadingScreen(this);
+		preferences = new AppPreferences();
 		setScreen(loadingScreen);
 
 	}
@@ -46,7 +48,12 @@ public class BlackJack extends Game {
 				if(preferenceScreen == null){
 					preferenceScreen = new PreferenceScreen(this);
 				}
+				this.setScreen(preferenceScreen);
+				break;
 		}
+	}
+	public AppPreferences getPreferences(){
+		return this.preferences;
 	}
 
 
